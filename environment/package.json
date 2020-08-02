@@ -1,0 +1,30 @@
+{
+  "name": "as-bridge-cli",
+  "version": "1.0.0",
+  "description": "CLI to set up the environment needed for the bridge to work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developerfred/AS-bridge.git"
+  },
+  "keywords": [
+    "Solana",
+    "Arweave",
+    "Bridge",
+    "permaweb"
+  ],
+  "author": "codingsh <codingsh@pm.me>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developerfred/AS-bridge/issues"
+  },
+  "homepage": "https://github.com/developerfred/AS-bridge#readme",
+  "dependencies": {
+    "@solana/web3.js": "^0.64.0",
+    "husky": "^4.2.5",
+    "typescript": "^3.9.7"
+  }
+}
