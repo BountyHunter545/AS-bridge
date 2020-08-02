@@ -21,3 +21,11 @@
   </h3>
 </div>
 
+# Partners
+--- 
+<p align="center">
+    <a href="https://github.com/solana-labs/"><img alt="Solana" src="https://i.imgur.com/OMnvVEz.png" width="250" /></a>
+    <a href="https://github.com/ArweaveTeam"><img alt="Arweave" src="https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco/kjukr170sarug8xhp9pk" width="100"></a>
+    <a href="https://github.com/gitcoinweb/"><img alt="Gitcoin" src="https://objectbox.io/wordpress/wp-content/uploads/2018/08/gitcoin-github-open-source-blockchain.png" width="200"></a>
+</p>
+
