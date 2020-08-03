@@ -2,17 +2,29 @@
   "name": "as-bridge-cli",
   "version": "1.0.0",
   "description": "CLI to set up the environment needed for the bridge to work.",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "bin": {
+    "as-bridge": "./lib/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "test": "sudo npm i -g && as-bridge",
+    "localnet:down": "bin/localnet.sh down",
+    "localnet:logs": "bin/localnet.sh logs -f",
+    "localnet:up": "bin/localnet.sh up",
+    "localnet:update": "bin/localnet.sh update",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/developerfred/AS-bridge.git"
   },
   "keywords": [
-    "Solana",
     "Arweave",
+    "Solana",
+    "decentralized",
     "Bridge",
     "permaweb"
   ],
@@ -23,12 +35,16 @@
   },
   "homepage": "https://github.com/developerfred/AS-bridge#readme",
   "devDependencies": {
-    "prettier": "^2.0.2"
+    "@types/node": "^14.0.27",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "@solana/web3.js": "^0.64.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -42,6 +58,9 @@
     "bn.js": "^5.1.2",
     "body-parser": "^1.19.0",
     "buffer-layout": "^1.2.0",
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "commander": "^6.0.0",
     "css-loader": "^3.1.0",
     "dotenv": "8.2.0",
     "eslint": "^6.1.0",
@@ -50,15 +69,18 @@
     "eslint-plugin-react": "^7.11.1",
     "event-emitter": "^0.3.5",
     "express": "^4.16.4",
+    "figlet": "^1.5.0",
     "flow-bin": "0.122.0",
     "flow-typed": "^3.0.0",
     "http-server": "^0.12.0",
+    "husky": "^4.2.5",
     "jayson": "^3.0.1",
     "json-to-pretty-yaml": "^1.2.2",
     "mkdirp-promise": "^5.0.1",
     "moment": "^2.22.2",
     "mz": "^2.7.0",
     "node-fetch": "^2.2.0",
+    "path": "^0.12.7",
     "react": "^16.5.2",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.5.2",
@@ -68,8 +90,6 @@
     "watch": "^1.0.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9",
-    "husky": "^4.2.5",
-    "typescript": "^3.9.7"
+    "webpack-dev-server": "^3.1.9"
   }
 }
